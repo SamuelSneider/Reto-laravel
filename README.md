@@ -21,4 +21,3 @@
  
  
  
-Este es solo un ejemplo básico de un archivo README. Puedes adaptarlo a las necesidades y características específicas de tu proyecto. Si tienes alguna funcionalidad especial en tu aplicación, como autenticación, roles de usuarios, o algún tipo de API, puedes agregar más detalles en la sección de **Uso**.

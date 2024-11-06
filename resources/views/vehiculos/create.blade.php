@@ -24,21 +24,21 @@
                     <div class="mb-3 row">
                         <label for="marca" class="col-sm-3 col-form-label">Marca:</label>
                         <div class="col-sm-6">
-                            <input type="text" class="form-control" name="marca" id="marca" value="{{ old('marca') }}" required>    
+                        <input type="text" class="form-control" name="marca" id="marca" value="{{ old('marca') }}" oninput="this.value = this.value.toUpperCase()" required>
                         </div>
                     </div>
 
                     <div class="mb-3 row">
                         <label for="placa" class="col-sm-3 col-form-label">Placa:</label>
                         <div class="col-sm-6">
-                            <input type="text" class="form-control" name="placa" id="placa" value="{{ old('placa') }}" required>  
+                            <input type="text" class="form-control" name="placa" id="placa" value="{{ old('placa') }}" oninput="this.value = this.value.toUpperCase()" required>  
                         </div>
                     </div>
 
                     <div class="mb-3 row">
                         <label for="color" class="col-sm-3 col-form-label">Color:</label>
                         <div class="col-sm-6">
-                            <input type="text" class="form-control" name="color" id="color" value="{{ old('color') }}" required>
+                            <input type="text" class="form-control" name="color" id="color" value="{{ old('color') }}" oninput="this.value = this.value.toUpperCase()"required>
                         </div>
                     </div>
 
@@ -62,7 +62,7 @@
                         <div class="col-sm-6">
                             <select class="form-control" name="accidente" id="accidente" required>
                                 <option value="" disabled selected>Seleccione una opción</option>
-                                <option value="1" {{ old('accidente') == '1' ? 'selected' : '' }}>Sí</option>
+                                <option value="1" {{ old('accidente') == '1' ? 'selected' : '' }}>Si</option>
                                 <option value="0" {{ old('accidente') == '0' ? 'selected' : '' }}>No</option>
                             </select>
                         </div>
@@ -76,6 +76,7 @@
             </div>
         </div>
     </div>
+    
 </main>
 
 @endsection

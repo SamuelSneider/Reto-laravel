@@ -9,18 +9,7 @@
         <div class="card" style="max-width: 800px; margin: auto;">
            <div class="card-body">
                <h2>Editar vehículo</h2>
-
-               @if ($errors->any())
-               <div class="alert alert-warning alert-dismissible fade show" role="alert">
-                   <ul>
-                       @foreach ($errors->all() as $error)
-                           <li>{{ $error }}</li>
-                       @endforeach
-                   </ul>
-                   <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-               </div>
-               @endif
-
+             
                <form action="{{ url('vehiculos/'.$vehiculos->id) }}" method="post">
                    @method("PUT")
                    @csrf
@@ -28,21 +17,21 @@
                    <div class="mb-3 row">
                        <label for="marca" class="col-sm-3 col-form-label">Marca:</label>
                        <div class="col-sm-6">
-                           <input type="text" class="form-control" name="marca" id="marca" value="{{ $vehiculos->marca }}" required>    
+                       <input type="text" class="form-control" name="marca" id="marca" value="{{ strtoupper($vehiculos->marca) }}" oninput="this.value = this.value.toUpperCase()" required>
                        </div>
                    </div>
 
                    <div class="mb-3 row">
                        <label for="placa" class="col-sm-3 col-form-label">Placa:</label>
                        <div class="col-sm-6">
-                           <input type="text" class="form-control" name="placa" id="placa" value="{{ $vehiculos->placa }}" required>  
+                           <input type="text" class="form-control" name="placa" id="placa" value="{{ $vehiculos->placa }}" " oninput="this.value = this.value.toUpperCase()" required>  
                        </div>
                    </div>
 
                    <div class="mb-3 row">
                        <label for="color" class="col-sm-3 col-form-label">Color:</label>
                        <div class="col-sm-6">
-                           <input type="text" class="form-control" name="color" id="color" value="{{ $vehiculos->color }}" required>
+                           <input type="text" class="form-control" name="color" id="color" value="{{ $vehiculos->color }}" oninput="this.value = this.value.toUpperCase()" required>
                        </div>
                    </div>
 
@@ -65,7 +54,7 @@
                        <div class="col-sm-6">
                            <select class="form-control" name="accidente" id="accidente" required>
                                <option value="" disabled selected>Seleccione una opción</option>
-                               <option value="1" {{ $vehiculos->accidente == 1 ? 'selected' : '' }}>Sí</option>
+                               <option value="1" {{ $vehiculos->accidente == 1 ? 'selected' : '' }}>Si</option>
                                <option value="0" {{ $vehiculos->accidente == 0 ? 'selected' : '' }}>No</option>
                            </select>
                        </div>
@@ -78,8 +67,7 @@
                </form> 
            </div>
         </div>
-    </div>
-    
+    </div> 
 </main>
 
 @endsection

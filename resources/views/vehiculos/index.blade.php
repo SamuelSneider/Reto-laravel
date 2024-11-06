@@ -4,13 +4,12 @@
 
 <main>
     <div class="container py-5">
-        <div class="card">
+        <div class="card custom-card">
             <div class="card-body">
                 <h2 class="card-title">Lista de Vehículos</h2> 
 
                 <form action="{{ route('vehiculos.index') }}" method="GET" class="mb-4">
                     <div class="row">
-                    @if (session('success')) <div class="alert alert-success"> {{ session('success') }} </div> @endif
                         <div class="col-md-3">
                             <input type="text" name="marca" class="form-control" placeholder="Buscar Marca" value="{{ request('marca') }}">
                         </div>
@@ -56,11 +55,11 @@
                                     <a href="{{ url('vehiculos/'.$vehiculo->id.'/edit') }}" class="btn btn-info btn-sm me-2">
                                         <i class="fas fa-edit"></i> Editar
                                     </a> 
-                                    <form action="{{ url('vehiculos/' .$vehiculo->id) }}" method="post">
-                                        @method("DELETE")
-                                        @csrf
-                                        <button type="submit" class="btn btn-danger btn-sm"><i class="fas fa-trash"></i> Eliminar</button>
-                                    </form>
+                                    <form action="{{ url('vehiculos/' .$vehiculo->id) }}" method="post" class="form-eliminar">
+                                @method("DELETE")
+                                @csrf
+                                <button type="button" class="btn btn-danger btn-sm btn-eliminar"><i class="fas fa-trash"></i> Eliminar</button>
+            </form>
                                 </div>
                             </td>
                         </tr>
@@ -78,5 +77,6 @@
             </div>
         </div>
     </div>
+   
 </main>
 @endsection

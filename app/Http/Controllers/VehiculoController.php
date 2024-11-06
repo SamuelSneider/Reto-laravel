@@ -61,7 +61,7 @@ class VehiculoController extends Controller
        $vehiculo->fecha_compra = $request->input('fecha_compra');
        $vehiculo->accidente = $request->input('accidente') == '1';
        $vehiculo-> save();
-       return view("vehiculos.menssage",['msg'=>"Registro creado"]);
+       return redirect()->route('vehiculos.create')->with('success', 'El vehículo ha sido creado exitosamente.');
 
     }
 
@@ -104,7 +104,7 @@ class VehiculoController extends Controller
        $vehiculo->fecha_compra = $request->input('fecha_compra');
        $vehiculo->accidente = $request->input('accidente') == '1' ? 1 : 0;
        $vehiculo-> save();
-       return view("vehiculos.menssage",['msg'=>"Registro Actualizado"]);
+       return redirect()->route('vehiculos.index')->with('success', 'Registro actualizado correctamente.');
 
         
     }

@@ -4,7 +4,7 @@
 
 <main>
     <div class="container py-5">
-        <div class="card" style="max-width: 800px; margin: auto;">
+        <div class="card" style="max-width: 800px; margin: auto; background-color: #F3F4F6;">
             <div class="card-body">
                 <h2 class="card-title">Registrar vehículo</h2>
 

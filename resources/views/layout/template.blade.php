@@ -100,26 +100,7 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 </script>
 @if(session('success'))
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            Swal.fire({
-                title: '¡Éxito!',
-                text: "{{ session('success') }}",
-                icon: 'success',
-                showCancelButton: true,
-                confirmButtonText: 'Ir al índice',
-                cancelButtonText: 'Seguir registrando otro vehiculo'
-            }).then((result) => {
-                if (result.isConfirmed) {
-                    window.location.href = "{{ route('vehiculos.index') }}";
-                }
-            });
-        });
-    </script>
-    
-@endif
-@if(session('success'))
-        <script>
+<script>
             document.addEventListener("DOMContentLoaded", function() {
                 Swal.fire({
                     icon: 'success',
@@ -130,8 +111,28 @@ document.addEventListener('DOMContentLoaded', function () {
                 });
             });
         </script>
-    @endif
-
+    
+@endif
+<script>
+    document.getElementById('btn-guardar').addEventListener('click', function (e) {
+        e.preventDefault(); 
+        const form = document.getElementById('form-editar');
+        
+        Swal.fire({
+            title: '¿Estás seguro de que deseas guardar los cambios?',
+            icon: 'question',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Guardar',
+            cancelButtonText: 'Cancelar'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                form.submit(); 
+            }
+        });
+    });
+</script>
     <style>
         body {
             background-color: #D1ECF1; 

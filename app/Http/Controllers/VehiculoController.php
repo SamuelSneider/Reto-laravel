@@ -61,7 +61,7 @@ class VehiculoController extends Controller
        $vehiculo->fecha_compra = $request->input('fecha_compra');
        $vehiculo->accidente = $request->input('accidente') == '1';
        $vehiculo-> save();
-       return redirect()->route('vehiculos.create')->with('success', 'El vehículo ha sido creado exitosamente.');
+       return redirect()->route('vehiculos.index')->with('success', 'El vehículo ha sido creado exitosamente.');
 
     }
 

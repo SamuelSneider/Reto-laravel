@@ -15,7 +15,7 @@
 
 1. **Descripción**
 
-`Reto_Autos` es una aplicación web desarrollada con el framework Laravel, diseñada para gestionar un sistema 
+`Reto_Vehiculos` es una aplicación web desarrollada con el framework Laravel, diseñada para gestionar un sistema 
 de registro de vehículos. La aplicación incluye funcionalidades para crear, leer, actualizar y eliminar registros de vehículos (CRUD).
 
 2. **Requisitos del sistema**
